@@ -67,11 +67,57 @@ def difficultySelect(): #difficulty selection screen
         difficultySelect()
 def triviaQuestions ():
     if random.randint(1,100) <= 10:
-        randomQuestion = random.randint(1,10)
+        randomQuestion = random.randint(1,3)
         if randomQuestion == 1:
-            print("placeholder for q1")
-            correctAnswer = "pq1a"
-        elif
+            print("Who makes the most popular version of the MP5?")
+            correctAnswer = "A"
+            print("A. Heckler & Koch")
+            print("B. Colt")
+            print("C. Browning")
+            print("D. Armalite")
+        elif randomQuestion == 2:
+            print("Where was the hamburger invented?")
+            correctAnswer = "C"
+            print("A. Bulgaria")
+            print("B. America")
+            print("C. Germany")
+            print("D. Canada")
+        elif randomQuestion == 3:
+            print("What fighter jet has the only confirmed satellite kill?")
+            correctAnswer = "B"
+            print("A. A-10")
+            print("B. F-15")
+            print("C. Lawnchair Larry")
+            print("D. F-22")
+        chosenAnswer == "Q"
+        alreadyChoseAnAnswer = False
+        if chosenAnswer == "A" or chosenAnswer == "B" or chosenAnswer == "C" or chosenAnswer == "D":
+            if chosenAnswer == correctAnswer:
+                if randomQuestion == 1:
+                    print("Correct! It's the H&K MP5!")
+                elif randomQuestion == 2:
+                    print("Correct! The hamburger was invented in Hamburg, Germany!")
+                elif randomQuestion == 3:
+                    print("Correct! The F-15 has the only confirmed satellite kill!")
+            else:
+                if randomQuestion == 1:
+                    print("Incorrect! It's the H&K MP5!")
+                    print("NOW DIE!")
+                    int("YOU SHOULD CRASH NOW!")
+                elif randomQuestion == 2:
+                    print("Incorrect! The hamburger was invented in Hamburg, Germany!")
+                    print("NOW DIE!")
+                    int("YOU SHOULD CRASH NOW!")
+                elif randomQuestion == 3:
+                    print("Incorrect! The F-15 has the only confirmed satellite kill!")
+                    print("NOW DIE!")
+                    int("YOU SHOULD CRASH NOW!")
+        else:
+            alreadyChoseAnAnswer = True
+            if alreadyChoseAnAnswer == False:
+                chosenAnswer = input("Pick the letter of the answer. Capitalize it!")
+            elif alreadyChoseAnAnswer == True:
+                chosenAnswer = input("Try again. Capitalize the letter!")
 def decideBlueShell():
     global guesses
     if random.randint(1,100) <= 10: #10% chance to blueshell
@@ -116,6 +162,7 @@ def startGame(maxNum, rigged):
             if random.randint(1,1000) == 1:  #1 in 1000 chance to crash
                 print("1 in 1000 chance to crash, and you rolled a nat -13")
                 int("you should crash the program NOW")
+            triviaQuestions() #run the triviaquestions program.
         if guess > maxNum or guess < 1: #handles the invalid numbers in a more easy to see way, at least for me
             print("what are you doing? That is NOT a number from 1-",maxNum,". That counts as a guess, and serves you right!")
         elif guess > randomNumber: #checks if the randomnumber is higher than the guess
