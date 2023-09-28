@@ -20,7 +20,7 @@ def difficultySelect(): #difficulty selection screen
     global maxNum
     global rigged
     playerDecidedIfSure = 0
-    print("difficulty menu: /n /n /n ") #/n for line breaks didn't want to work :(
+    print("difficulty menu:") #/n for line breaks didn't want to work :(
     print("0: Totally 100% the easiest difficulty! Not hard at all, I promise! (1-1000)")
     print("1. Sub-Brick (1-10) ")
     print("2. Below Average (1-50) ")
@@ -65,7 +65,13 @@ def difficultySelect(): #difficulty selection screen
         print("-------------------------")
         print("")
         difficultySelect()
-
+def triviaQuestions ():
+    if random.randint(1,100) <= 10:
+        randomQuestion = random.randint(1,10)
+        if randomQuestion == 1:
+            print("placeholder for q1")
+            correctAnswer = "pq1a"
+        elif
 def decideBlueShell():
     global guesses
     if random.randint(1,100) <= 10: #10% chance to blueshell
