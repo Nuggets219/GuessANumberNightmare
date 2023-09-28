@@ -65,6 +65,8 @@ def difficultySelect(): #difficulty selection screen
         print("-------------------------")
         print("")
         difficultySelect()
+
+
 def triviaQuestions ():
     if random.randint(1,100) <= 10:
         randomQuestion = random.randint(1,3)
@@ -118,6 +120,7 @@ def triviaQuestions ():
                 chosenAnswer = input("Pick the letter of the answer. Capitalize it!")
             elif alreadyChoseAnAnswer == True:
                 chosenAnswer = input("Try again. Capitalize the letter!")
+
 def decideBlueShell():
     global guesses
     if random.randint(1,100) <= 10: #10% chance to blueshell
@@ -125,12 +128,14 @@ def decideBlueShell():
         print("number of guesses before: ", guesses)
         guesses =+ 4
         print("new number of guesses: ", guesses)
+
 def randomizeNumber(): #randomizes the correct number when called
     global randomNumber
     global maxNum
     if randomNumber != -1:
         print("Correct Number has changed!")
     randomNumber = random.randint(1, maxNum)
+
 def decideGuessShift():
     if random.randint(1,20) == random.randint(1,20):
         shiftDirection = random.randint(1,2)
@@ -142,6 +147,8 @@ def decideGuessShift():
             guess =+ 1
         else:
             print("error in decideGuessShift. Restart the program.")
+
+
 def startGame(maxNum, rigged):
     global guesses
     global randomNumber
